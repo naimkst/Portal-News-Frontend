@@ -1,9 +1,13 @@
 import React from "react";
 import Link from 'next/link'
+import Moment from 'react-moment';
 
-export default function Blog() {
+
+export default function Blog({ data }: any) {
+  const now = new Date();
   return (
     <>
+    {/* {JSON.stringify( data )} */}
       <link
         rel="stylesheet"
         href="https://cdn.tailgrids.com/tailgrids-fallback.css"
@@ -37,167 +41,73 @@ export default function Blog() {
             </div>
           </div>
           <div className="flex flex-wrap -mx-4">
-            <div className="w-full md:w-1/2 lg:w-1/3 px-4">
-              <div className="max-w-[370px] mx-auto mb-10">
-                <div className="rounded overflow-hidden mb-8">
-                  <img
+            { 
+              data?.map((blog: any)=> (
+                <div className="w-full md:w-1/2 lg:w-1/3 px-4">
+                <div className="max-w-[370px] mx-auto mb-10">
+                  <div className="rounded overflow-hidden mb-8">
+                    { 
+                    blog.image ? <img
+                    src={`http://localhost:3000/posts/post-image/${blog.image}`}
+                    alt="image"
+                    className="w-full h-70 object-cover"
+                  /> : <img
                     src="https://cdn.tailgrids.com/1.0/assets/images/blogs/blog-01/image-01.jpg"
                     alt="image"
                     className="w-full"
                   />
-                </div>
-                <div>
-                  <span
-                    className="
-                     bg-primary
-                     rounded
-                     inline-block
-                     text-center
-                     py-1
-                     px-4
-                     text-xs
-                     leading-loose
-                     font-semibold
-                     text-white
-                     mb-5
-                     "
-                  >
-                    Dec 22, 2023
-                  </span>
-                  <h3>
-                    <Link href={`blog/${1}`}>
-                    <a
+                    
+                    }
+                    
+                  </div>
+                  <div>
+                    <span
                       className="
-                        font-semibold
-                        text-xl
-                        sm:text-2xl
-                        lg:text-xl
-                        xl:text-2xl
-                        mb-4
-                        inline-block
-                        text-dark
-                        hover:text-primary
-                        "
+                       bg-primary
+                       rounded
+                       inline-block
+                       text-center
+                       py-1
+                       px-4
+                       text-xs
+                       leading-loose
+                       font-semibold
+                       text-white
+                       mb-5
+                       "
                     >
-                      Meet AutoManage, the best AI management tools
-                    </a>
+                      <Moment date={blog.createdAt} format="D MMM YYYY"/>
+                    </span>
+                    <h3>
+                      <Link href={`/blog/${blog.id}`}>
+                      <a
+                        className="
+                          font-semibold
+                          text-xl
+                          sm:text-2xl
+                          lg:text-xl
+                          xl:text-2xl
+                          mb-4
+                          inline-block
+                          text-dark
+                          hover:text-primary
+                          "
+                      >
+                        { blog?.title }
+                      </a>
+  
+                      </Link>
+                    </h3>
+                    <p className="text-base text-body-color">
+                      { blog?.content.substring(0, 120) }
+                    </p>
+                  </div>
+                </div>
+              </div>
+              ))
+            }
+           
 
-                    </Link>
-                  </h3>
-                  <p className="text-base text-body-color">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="w-full md:w-1/2 lg:w-1/3 px-4">
-              <div className="max-w-[370px] mx-auto mb-10">
-                <div className="rounded overflow-hidden mb-8">
-                  <img
-                    src="https://cdn.tailgrids.com/1.0/assets/images/blogs/blog-01/image-02.jpg"
-                    alt="image"
-                    className="w-full"
-                  />
-                </div>
-                <div>
-                  <span
-                    className="
-                     bg-primary
-                     rounded
-                     inline-block
-                     text-center
-                     py-1
-                     px-4
-                     text-xs
-                     leading-loose
-                     font-semibold
-                     text-white
-                     mb-5
-                     "
-                  >
-                    Mar 15, 2023
-                  </span>
-                  <h3>
-                  <Link href={`blog/${1}`}>
-                    <a
-                      className="
-                        font-semibold
-                        text-xl
-                        sm:text-2xl
-                        lg:text-xl
-                        xl:text-2xl
-                        mb-4
-                        inline-block
-                        text-dark
-                        hover:text-primary
-                        "
-                    >
-                      How to earn more money as a wellness coach
-                    </a>
-                    </Link>
-                  </h3>
-                  <p className="text-base text-body-color">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="w-full md:w-1/2 lg:w-1/3 px-4">
-              <div className="max-w-[370px] mx-auto mb-10">
-                <div className="rounded overflow-hidden mb-8">
-                  <img
-                    src="https://cdn.tailgrids.com/1.0/assets/images/blogs/blog-01/image-03.jpg"
-                    alt="image"
-                    className="w-full"
-                  />
-                </div>
-                <div>
-                  <span
-                    className="
-                     bg-primary
-                     rounded
-                     inline-block
-                     text-center
-                     py-1
-                     px-4
-                     text-xs
-                     leading-loose
-                     font-semibold
-                     text-white
-                     mb-5
-                     "
-                  >
-                    Jan 05, 2023
-                  </span>
-                  <h3>
-                  <Link href={`blog/${1}`}>
-                    <a
-                      href="javascript:void(0)"
-                      className="
-                        font-semibold
-                        text-xl
-                        sm:text-2xl
-                        lg:text-xl
-                        xl:text-2xl
-                        mb-4
-                        inline-block
-                        text-dark
-                        hover:text-primary
-                        "
-                    >
-                      The no-fuss guide to upselling and cross selling
-                    </a>
-                    </Link>
-                  </h3>
-                  <p className="text-base text-body-color">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry.
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
