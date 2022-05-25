@@ -1,6 +1,8 @@
 import React from "react";
 import { getAlltData } from "../../service/posts";
 import Link from 'next/link'
+import Image from 'next/image'
+
 
 function Hero({ data }: any) {
     const blog = data[0];
@@ -28,13 +30,13 @@ function Hero({ data }: any) {
         <div className="flex items-center justify-center w-full h-96 md:w-1/2">
         
         { blog.image ? 
-            <img
+            <Image
             className="object-cover w-full h-full max-w-2xl rounded-md"
             src={`http://localhost:3000/posts/post-image/${blog.image}`}
             alt="apple watch photo"
           />
         : 
-            <img
+            <Image
             className="object-cover w-full h-full max-w-2xl rounded-md"
             src="https://images.unsplash.com/photo-1579586337278-3befd40fd17a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80"
             alt="apple watch photo"

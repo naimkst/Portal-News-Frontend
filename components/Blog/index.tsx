@@ -1,6 +1,7 @@
 import React from "react";
 import Link from 'next/link'
 import Moment from 'react-moment';
+import Image from 'next/image'
 
 
 export default function Blog({ data }: any) {
@@ -43,15 +44,15 @@ export default function Blog({ data }: any) {
           <div className="flex flex-wrap -mx-4">
             { 
               data?.map((blog: any)=> (
-                <div className="w-full md:w-1/2 lg:w-1/3 px-4">
+                <div key={ blog.id } className="w-full md:w-1/2 lg:w-1/3 px-4">
                 <div className="max-w-[370px] mx-auto mb-10">
                   <div className="rounded overflow-hidden mb-8">
                     { 
-                    blog.image ? <img
+                    blog.image ? <Image
                     src={`http://localhost:3000/posts/post-image/${blog.image}`}
                     alt="image"
                     className="w-full h-70 object-cover"
-                  /> : <img
+                  /> : <Image
                     src="https://cdn.tailgrids.com/1.0/assets/images/blogs/blog-01/image-01.jpg"
                     alt="image"
                     className="w-full"

@@ -17,36 +17,38 @@ export default function Navigation() {
           <div className="flex items-center justify-center mt-6 text-gray-600 capitalize dark:text-gray-300">
             <Link href="/">
               <a
-                href="/"
                 className="text-gray-800 dark:text-gray-200 border-b-2 border-blue-500 mx-1.5 sm:mx-6"
               >
                 home
               </a>
             </Link>
 
+            <Link href="/">
             <a
-              href="#"
               className="border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-blue-500 mx-1.5 sm:mx-6"
             >
               features
             </a>
+            </Link>
 
+            <Link href="/">
             <a
-              href="#"
               className="border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-blue-500 mx-1.5 sm:mx-6"
             >
               pricing
             </a>
+            </Link>
 
+            <Link href="/">
             <a
-              href="#"
               className="border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-blue-500 mx-1.5 sm:mx-6"
             >
               blog
             </a>
+            </Link>
 
+            <Link href="/">
             <a
-              href="#"
               className="border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-blue-500 mx-1.5 sm:mx-6"
             >
               <svg
@@ -64,8 +66,9 @@ export default function Navigation() {
               </svg>
             </a>
 
+          </Link>
+            <Link href="/">
             <a
-              href="#"
               className="border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-blue-500 mx-1.5 sm:mx-6"
             >
               <svg
@@ -78,6 +81,7 @@ export default function Navigation() {
                 <path d="m21.308 6.464c.993 0 .992-1.5 0-1.5h-5.87c-.993 0-.992 1.5 0 1.5z" />
               </svg>
             </a>
+            </Link>
           </div>
         </div>
       </nav>
