@@ -17,6 +17,7 @@ export default function SingleBlog({ data }) {
 </style> */}
 
 {/* { JSON.stringify(data) } */}
+
       <main className="relative container mx-auto bg-white px-4">
         <div className="relative -mx-4 top-0 pt-[17%] overflow-hidden">
           <img
