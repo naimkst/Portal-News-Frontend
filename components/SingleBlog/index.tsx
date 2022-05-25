@@ -1,7 +1,9 @@
 import React from "react";
 import Moment from 'react-moment';
 
-export default function SingleBlog({ data }) {
+export default function SingleBlog({ data }: any) {
+
+  
   return (
     <>
       {/* <style>
