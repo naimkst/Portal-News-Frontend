@@ -10,6 +10,7 @@ const request = axios.create({
   },
 });
 
+
 request.interceptors.request.use((config: any) => {
   const token = Cookie.get("token");
   if (token) {
